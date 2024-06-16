@@ -1,4 +1,3 @@
-import 'package:moves_app/features/moves/data/BaseResponse.dart';
 import 'package:moves_app/shared/bases/base_mapper.dart';
 
 import '../domain/move_entity.dart';

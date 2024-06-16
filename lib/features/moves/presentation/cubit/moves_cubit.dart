@@ -6,15 +6,17 @@ import 'package:moves_app/features/moves/domain/repositories/moves_repo.dart';
 import '../../../../shared/bases/base_state.dart';
 import '../../../../shared/navigator_helper.dart';
 import '../../../../shared/networking/failures.dart';
+import '../../domain/move_details_entity.dart';
 
-class MoveCubit extends Cubit<BaseState> {
+class MovesCubit extends Cubit<BaseState> {
   final MovesRepository _movesRepository;
 
-  MoveCubit(this._movesRepository) : super(const InitState());
+  MovesCubit(this._movesRepository) : super(const InitState());
 
-  static MoveCubit get instance => BlocProvider.of(NavigatorHelper.context);
+  static MovesCubit get instance => BlocProvider.of(NavigatorHelper.context);
 
   List<MovieEntity> moves = [];
+  MoveDetailsEntity move = MoveDetailsEntity();
 
   String errorMessage = '';
 
@@ -28,6 +30,18 @@ class MoveCubit extends Cubit<BaseState> {
       emit(ErrorState(msg: e.message));
     }, (List<MovieEntity> value) {
       moves = value;
+      emit(const DoneState());
+    });
+  }
+  getMoveDetails(String moveId) async {
+    emit(const LoadingState());
+    Either<NetworkException, MoveDetailsEntity> result =
+        await _movesRepository.getMovieDetail(moveId);
+    result.fold((NetworkException e) {
+      errorMessage = e.message;
+      emit(ErrorState(msg: e.message));
+    }, (MoveDetailsEntity value) {
+      move = value;
       emit(const DoneState());
     });
   }

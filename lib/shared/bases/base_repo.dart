@@ -14,6 +14,7 @@ Future<Either<NetworkException, T>> tryToExecute<T>(
   async {
     try {
       var response = await call();
+      print('API Response: ${response.data}'); // print API response
       T mappedResponse = mapper(response.data);
       return right<NetworkException, T>(mappedResponse);
     } on DioException catch (e) {

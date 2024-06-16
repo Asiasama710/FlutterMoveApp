@@ -2,9 +2,9 @@ import 'package:dio/dio.dart';
 import 'package:get_it/get_it.dart';
 import 'package:moves_app/features/moves/data/repositories/moves_repo_impl.dart';
 import 'package:moves_app/features/moves/domain/repositories/moves_repo.dart';
-import 'package:moves_app/features/moves/presentation/cubit/move_cubit.dart';
 
 
+import '../features/moves/presentation/cubit/moves_cubit.dart';
 import '../shared/networking/dio.dart';
 import '../shared/networking/interceptors.dart';
 
@@ -20,6 +20,6 @@ void setupServiceLocator() {
   getIt.registerSingleton<MovesRepository>(MovesRepositoryImpl(getIt<Dio>(),));
 
   // CUBITS
-  getIt.registerFactory<MoveCubit>(() => MoveCubit(getIt()));
+  getIt.registerFactory<MovesCubit>(() => MovesCubit(getIt()));
 
 }
