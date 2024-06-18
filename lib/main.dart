@@ -64,7 +64,7 @@ class _MyAppState extends State<MyApp> {
       },
       home: AnnotatedRegion<SystemUiOverlayStyle>(
           value: const SystemUiOverlayStyle(
-            statusBarColor: Colors.white,
+            statusBarColor: Colors.transparent,
             systemNavigationBarColor: Colors.white,
             systemNavigationBarIconBrightness: Brightness.dark,
             statusBarIconBrightness: Brightness.dark,
