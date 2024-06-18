@@ -38,10 +38,10 @@ class AppTextsTheme extends ThemeExtension<AppTextsTheme> {
           fontSize: 20,
           fontWeight: FontWeight.w600,
         ),
-        caption: TextStyle(
+    label2 : TextStyle(
           fontFamily: _baseFamily,
-          fontSize: 20,
-          fontWeight: FontWeight.w500,
+          fontSize: 16,
+          fontWeight: FontWeight.w600,
         ),
         body: TextStyle(
           fontFamily: _baseFamily,
@@ -53,7 +53,7 @@ class AppTextsTheme extends ThemeExtension<AppTextsTheme> {
           fontSize: 16,
           fontWeight: FontWeight.w500,
         ),
-        label2: TextStyle(
+    caption: TextStyle(
             fontFamily: _baseFamily,
             fontSize: 12,
             fontWeight: FontWeight.w500,

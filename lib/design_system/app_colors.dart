@@ -3,7 +3,6 @@ import 'package:flutter/material.dart';
 class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
   final Color primary;
   final Color secondary;
-  final Color onSecondary;
   final Color primaryVariant;
   final Color secondaryVariant;
   final Color surface;
@@ -16,7 +15,6 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
   final Color onPrimaryBody;
   final Color onPrimaryTertiary;
   final Color error;
-  final Color errorContainer;
   final Color disable;
   final Color highlights;
   final Color textSecondary;
@@ -26,13 +24,11 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
       required this.secondaryVariant,
       required this.shadePrimary,
       required this.shadeSecondary,
-      required this.onSecondary,
       required this.shadeTertiary,
       required this.shadeQuad,
       required this.onPrimaryTitle,
       required this.onPrimaryBody,
       required this.onPrimaryTertiary,
-      required this.errorContainer,
       required this.disable,
       required this.highlights,
       required this.primary,
@@ -43,25 +39,23 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
       required this.textSecondary});
 
   factory AppColorsTheme.dark() => const AppColorsTheme._internal(
-        primary: Color(0xff98c1d9),
-        secondary: Color(0xff4a5d6f),
-        primaryVariant: Color(0xb398c1d9),
-        secondaryVariant: Color(0xffFAF4E9),
-        shadePrimary: Color(0xDD001A1F),
-        shadeSecondary: Color(0x99001A1F),
-        shadeTertiary: Color(0x5E001A1F),
-        shadeQuad: Color(0x14001A1F),
+        primary: Color(0xff861818),
+        secondary: Color(0xffffffff),
+        primaryVariant: Color(0xfff5d4d4),
+        secondaryVariant: Color(0xffffffff),
+        shadePrimary: Color(0xFFF1F1F1),
+        shadeSecondary: Color(0x99F1F1F1),
+        shadeTertiary: Color(0x4DF1F1F1),
+        shadeQuad: Color(0x142D2D2D),
         error: Color(0xFFD92832),
-        errorContainer: Color(0x0AD92932),
-        background: Color(0xFF242A32),
-        surface: Color(0xFFFFFFFF),
-        onPrimaryTitle: Color(0xDEFFFFFF),
-        onPrimaryBody: Color(0x80FFFFFF),
-        onPrimaryTertiary: Color(0x5EFFFFFF),
-        disable: Color(0xFFDEDEDE),
+        background: Color(0xFF110E0E),
+        surface: Color(0xFF2A2828),
+        onPrimaryTitle: Color(0xDE212121),
+        onPrimaryBody: Color(0x99212121),
+        onPrimaryTertiary: Color(0x5E212121),
+        disable: Color(0xFF343434),
         highlights: Color(0x7FD9D9D9),
         textSecondary: Color(0x99000000),
-        onSecondary: Color(0xFF98C1D9),
   );
 
 
