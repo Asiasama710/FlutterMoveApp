@@ -133,27 +133,17 @@ class MoveDetailsDto extends BaseMapper<MoveDetailsDto> {
   MoveDetailsEntity toEntity() {
     return MoveDetailsEntity(
       adult: adult,
-      backdropPath: backdropPath,
       genreIds: genres != null ? genres!.map((e) => e.toEntity()).toList() : [],
       id: id,
-      originalLanguage: originalLanguage,
-      originalTitle: originalTitle,
       overview: overview,
-      popularity: popularity,
       posterPath: 'https://image.tmdb.org/t/p/w500$posterPath',
       releaseDate: releaseDate,
       title: title,
       video: video,
       voteAverage: voteAverage,
       voteCount: voteCount,
-      budget: budget,
-      homepage: homepage,
-      imdbId: imdbId,
-      originCountry: originCountry,
-      revenue: revenue,
       runtime: runtime,
       status: status,
-      tagline: tagline,
     );
   }
 

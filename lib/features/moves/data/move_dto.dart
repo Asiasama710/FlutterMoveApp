@@ -92,7 +92,7 @@ class MovieDto extends BaseMapper<MovieDto> {
       title: title,
       overview: overview,
       popularity: popularity,
-      posterPath: posterPath,
+      posterPath:'https://image.tmdb.org/t/p/w500$posterPath',
       backdropPath: backdropPath,
       releaseDate: releaseDate,
       voteAverage: voteAverage,

@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:moves_app/design_system/theme.dart';
 import 'package:moves_app/features/moves/domain/move_entity.dart';
+
+import '../../../../shared/Widget/image_network.dart';
 
 class MoveCard extends StatelessWidget {
   final MovieEntity move;
@@ -11,32 +12,26 @@ class MoveCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return InkWell(
+        borderRadius: BorderRadius.circular(16),
         onTap: () {
           onClickMove();
         },
         child: Column(
           children: [
             Expanded(
-              child: Container(
-                decoration: ShapeDecoration(
-                  image: DecorationImage(
-                    image: NetworkImage(
-                        "https://image.tmdb.org/t/p/w500${move.posterPath}"),
-                    fit: BoxFit.cover,
+                child:  ImageNetwork(
+                  move.posterPath ?? '',
+                  height: double.maxFinite,
+                  width: double.infinity,
+                  fit: BoxFit.cover,
+                  imageBuilder: (context, imageProvider) => ClipRRect(
+                    borderRadius: BorderRadius.circular(15.0),
+                    child: Image(
+                      image: imageProvider,
+                      fit: BoxFit.cover,
+                    ),
                   ),
-                  shape: RoundedRectangleBorder(
-                      borderRadius: BorderRadius.circular(8)),
-                  shadows:  [
-                    BoxShadow(
-                      color:Theme.of(context).appColors.shadeQuad,
-                      blurRadius: 8,
-                      offset: const Offset(0, 4),
-                      spreadRadius: 0,
-                    )
-                  ],
-                ),
-              ),
-            ),
+                )),
           ],
         ));
   }

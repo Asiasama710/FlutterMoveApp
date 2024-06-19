@@ -10,5 +10,6 @@ class Assets {
   static const String bell = 'assets/icons/bell.svg';
   static const String iconEyeOn = 'assets/icons/eye_on.svg';
   static const String noFilm = 'assets/icons/no_film.svg';
+  static const String noInternet = 'assets/icons/no_internet.svg';
 
 }
