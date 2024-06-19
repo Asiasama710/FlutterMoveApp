@@ -30,7 +30,7 @@ class MoveDetailsCubit extends Cubit<BaseState> {
       emit(ErrorState(msg: e.message));
     }, (List<CastEntity> value) {
       cast = value;
-      _emitCombinedSuccessState();
+      emit(const DoneState());
     });
   }
 
@@ -42,15 +42,8 @@ class MoveDetailsCubit extends Cubit<BaseState> {
         emit(ErrorState(msg: e.message));
       }, (MoveDetailsEntity value) {
         move = value;
-        _emitCombinedSuccessState();
-
+        emit(const DoneState());
       });
-  }
-
-  void _emitCombinedSuccessState() {
-    if (cast.isNotEmpty) {
-      emit(const DoneState());
-    }
   }
 
 }
