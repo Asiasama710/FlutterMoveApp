@@ -1,6 +1,6 @@
 import 'package:moves_app/shared/bases/base_mapper.dart';
 
-import '../domain/move_entity.dart';
+import '../../domain/model/move_entity.dart';
 
 class MovieDto extends BaseMapper<MovieDto> {
    bool? adult;

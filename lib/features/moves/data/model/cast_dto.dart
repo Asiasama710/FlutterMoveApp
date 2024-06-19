@@ -1,6 +1,6 @@
 import 'package:moves_app/shared/bases/base_mapper.dart';
 
-import '../domain/cast_entity.dart';
+import '../../domain/model/cast_entity.dart';
 
 class CastDto extends BaseMapper<CastDto> {
   bool? adult;

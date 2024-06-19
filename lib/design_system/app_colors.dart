@@ -46,7 +46,7 @@ class AppColorsTheme extends ThemeExtension<AppColorsTheme> {
         shadePrimary: Color(0xFFF1F1F1),
         shadeSecondary: Color(0x99F1F1F1),
         shadeTertiary: Color(0x4DF1F1F1),
-        shadeQuad: Color(0x142D2D2D),
+        shadeQuad: Color(0x142C2A2A),
         error: Color(0xFFD92832),
         background: Color(0xFF110E0E),
         surface: Color(0xFF2A2828),

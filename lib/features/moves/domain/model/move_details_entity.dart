@@ -1,4 +1,5 @@
-import 'package:moves_app/features/moves/domain/genre_entity.dart';
+
+import 'genre_entity.dart';
 
 class MoveDetailsEntity {
   bool? adult;

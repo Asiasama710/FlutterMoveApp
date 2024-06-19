@@ -1,6 +1,6 @@
 
-import '../../../shared/bases/base_mapper.dart';
-import '../domain/genre_entity.dart';
+import '../../../../shared/bases/base_mapper.dart';
+import '../../domain/model/genre_entity.dart';
 
 class GenreDto extends BaseMapper<GenreDto> {
   int? id;

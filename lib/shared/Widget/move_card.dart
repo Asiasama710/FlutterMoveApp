@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:moves_app/features/moves/domain/move_entity.dart';
 
-import '../../../../shared/Widget/image_network.dart';
+import '../../features/moves/domain/model/move_entity.dart';
+import 'image_network.dart';
 
 class MoveCard extends StatelessWidget {
   final MovieEntity move;

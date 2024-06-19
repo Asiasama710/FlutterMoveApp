@@ -1,7 +1,7 @@
-import 'package:moves_app/features/moves/data/genre_dto.dart';
 
-import '../../../shared/bases/base_mapper.dart';
-import '../domain/move_details_entity.dart';
+import '../../../../shared/bases/base_mapper.dart';
+import '../../domain/model/move_details_entity.dart';
+import 'genre_dto.dart';
 
 class MoveDetailsDto extends BaseMapper<MoveDetailsDto> {
   bool? adult;

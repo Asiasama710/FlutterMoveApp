@@ -22,7 +22,7 @@ class ImageNetwork extends StatelessWidget {
       placeholder: (context, url) => Container(
         height: height,
         width: width,
-        color:Theme.of(context).appColors.shadeQuad,
+        color:Theme.of(context).appColors.surface,
         child: const Center(child: CircularProgressIndicator()),
       ),
       errorWidget: (context, url, error) => Container(
