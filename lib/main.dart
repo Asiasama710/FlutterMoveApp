@@ -1,12 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:flutter/services.dart';
 import 'package:moves_app/features/moves/presentation/view/moves_screen.dart';
-import 'package:moves_app/shared/configs/endpoints.dart';
 import 'package:moves_app/shared/log_util.dart';
-
+import 'package:flutter_localizations/flutter_localizations.dart';
 import 'app/di.dart';
 import 'design_system/app_colors.dart';
 import 'design_system/app_text.dart';
+import 'generated/l10n.dart';
 
 
 GlobalKey<NavigatorState> navigateKey = GlobalKey<NavigatorState>();
@@ -42,7 +42,7 @@ class _MyAppState extends State<MyApp> {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
       navigatorKey: navigateKey,
-      title: 'Moves App ',
+      title: "Moves App",
       theme: Theme.of(context).copyWith(
         colorScheme: Theme.of(context).colorScheme.copyWith(
           primary: AppColorsTheme.dark().primary,
@@ -55,6 +55,23 @@ class _MyAppState extends State<MyApp> {
           AppTextsTheme.main(),
         ],
       ),
+      supportedLocales: const [
+        Locale('en'),
+      ],
+      localizationsDelegates: const [
+        AppLocalizations.delegate,
+        GlobalMaterialLocalizations.delegate,
+        GlobalWidgetsLocalizations.delegate,
+        GlobalCupertinoLocalizations.delegate,
+      ],
+      // locale: _locale,
+      localeResolutionCallback: (currentLan, supportedLocales) {
+        if (currentLan != null) {
+          return currentLan;
+        }
+        return supportedLocales.first;
+      },
+
       builder: (context, child) {
         return MediaQuery(
           data: MediaQuery.of(context)

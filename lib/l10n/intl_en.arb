@@ -1,0 +1,15 @@
+{
+    "appName": "Move App",
+    "playNow": "Play Now",
+    "playTrailer": "Play Trailer",
+    "released": "Released",
+    "rating": "Rating",
+    "time": "Time",
+    "overview": "Overview",
+    "cast": "Cast",
+    "noInternetConnection": "No Internet Connection",
+    "noMoviesFound": "No Movies Found",
+    "noMoviesFoundDescription": "We couldn't find any movies. Please try again later.",
+    "tryAgain": "Try Again",
+    "noInternetDescription": "It looks like you're not connected to the internet. Please check your connection and try again."
+}
