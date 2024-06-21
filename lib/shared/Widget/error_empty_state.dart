@@ -8,7 +8,13 @@ class ErrorOrEmptyState extends StatelessWidget {
   final String icon;
   final String title;
   final String description;
-  const ErrorOrEmptyState({super.key,required this.title,required this.description, this.icon = Assets.noFilm});
+  final VoidCallback onClick;
+  const ErrorOrEmptyState({
+    super.key,
+    required this.title,
+    required this.description,
+    required this.onClick,
+    this.icon = Assets.noFilm});
 
   @override
   Widget build(BuildContext context) {
@@ -42,6 +48,11 @@ class ErrorOrEmptyState extends StatelessWidget {
                 .copyWith(color: Theme.of(context).appColors.shadeSecondary),
             maxLines: 3,
             textAlign: TextAlign.center,
+          ),
+          SizedBox(height: 12,),
+          ElevatedButton(
+            onPressed: onClick,
+            child: Text("try again"),
           ),
         ],
       ),
