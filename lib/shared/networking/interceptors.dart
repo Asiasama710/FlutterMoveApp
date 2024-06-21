@@ -1,12 +1,13 @@
+import 'dart:io' show Platform;
+
 import 'package:dio/dio.dart';
 
 class AuthInterceptor extends Interceptor {
-  static const String _token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMzU0NmQ4ZGEzOWEwZDM4MTRiYTk2MjgxYWE1Yzc4MiIsInN1YiI6IjY2NmRiNGI4ZTA4NDdmMDE1MmUxOTNkZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EJoYkNQfi7JnV2ASMSEc-FgywiaqbTIazqiu0HBAc6M";
-
+  static const String _api_key = 'Your_API_KEY';
   @override
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    options.headers["Authorization"] = "Bearer $_token";
+    options.headers["Authorization"] = "Bearer $_api_key";
     handler.next(options);
   }
 
@@ -19,3 +20,5 @@ class AuthInterceptor extends Interceptor {
     handler.next(err);
   }
 }
+
+
