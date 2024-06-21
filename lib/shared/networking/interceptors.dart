@@ -1,12 +1,12 @@
 import 'package:dio/dio.dart';
 
 class AuthInterceptor extends Interceptor {
-  static const String _token = "eyJhbGciOiJIUzI1NiJ9.eyJhdWQiOiIxMzU0NmQ4ZGEzOWEwZDM4MTRiYTk2MjgxYWE1Yzc4MiIsInN1YiI6IjY2NmRiNGI4ZTA4NDdmMDE1MmUxOTNkZiIsInNjb3BlcyI6WyJhcGlfcmVhZCJdLCJ2ZXJzaW9uIjoxfQ.EJoYkNQfi7JnV2ASMSEc-FgywiaqbTIazqiu0HBAc6M";
+  static const apiKey = String.fromEnvironment('API_KEY');
 
   @override
   void onRequest(
       RequestOptions options, RequestInterceptorHandler handler) async {
-    options.headers["Authorization"] = "Bearer $_token";
+    options.headers["Authorization"] = "Bearer $apiKey";
     handler.next(options);
   }
 
@@ -18,4 +18,12 @@ class AuthInterceptor extends Interceptor {
     }
     handler.next(err);
   }
+}
+
+class AppConfig {
+  final String? BASE_API_URL;
+  final String? BASE_IMAGE_API_URL;
+  final String? API_KEY;
+
+  AppConfig({this.BASE_API_URL, this.BASE_IMAGE_API_URL, this.API_KEY});
 }

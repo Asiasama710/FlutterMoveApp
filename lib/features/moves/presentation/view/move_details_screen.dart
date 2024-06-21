@@ -36,6 +36,10 @@ class MovieDetailsScreen extends StatelessWidget {
           return Center(
               child: ErrorOrEmptyState(title: AppLocalizations.of(context).noInternetConnection,
                 description: AppLocalizations.of(context).noInternetDescription,
+                onClick: () {
+                  _cubit.getMoveDetails('$moveId');
+                  _cubit.getCast('$moveId');
+                },
                 icon: Assets.noInternet,));
         }
 

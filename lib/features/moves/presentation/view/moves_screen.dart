@@ -49,6 +49,9 @@ class MovesScreen extends StatelessWidget {
                 title: AppLocalizations.of(context).noInternetConnection,
                 description: AppLocalizations.of(context).noInternetDescription,
                 icon: Assets.noInternet,
+                onClick: () {
+                  _cubit.getMoves();
+                },
               ));
             }
             if (state is DoneState) {
@@ -56,9 +59,11 @@ class MovesScreen extends StatelessWidget {
                   ? Center(
                       child: ErrorOrEmptyState(
                       title: AppLocalizations.of(context).noMoviesFound,
-                      description:
-                          AppLocalizations.of(context).noMoviesFoundDescription,
+                      description: AppLocalizations.of(context).noMoviesFoundDescription,
                       icon: Assets.noInternet,
+                      onClick: () {
+
+                      },
                     ))
                   : Padding(
                       padding: const EdgeInsets.symmetric(horizontal: 16),
