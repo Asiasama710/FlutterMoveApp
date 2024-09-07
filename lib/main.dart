@@ -13,7 +13,7 @@ GlobalKey<NavigatorState> navigateKey = GlobalKey<NavigatorState>();
 
 void main() {
   WidgetsFlutterBinding.ensureInitialized();
-  //setupServiceLocator();
+  setupServiceLocator();
   SystemChrome.setPreferredOrientations([
     DeviceOrientation.portraitUp,
     DeviceOrientation.portraitDown,
