@@ -18,8 +18,9 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      - run: flutter pub get
       - run: flutter clean
+      - run: flutter pub get
+      - run: flutter pub run intl_utils:generate
       - run: flutter build ios
 
   build_apk:
@@ -33,6 +34,7 @@ jobs:
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      - run: flutter pub get
       - run: flutter clean
+      - run: flutter pub get
+      - run: flutter pub run intl_utils:generate
       - run: flutter build apk --release
