@@ -20,6 +20,7 @@ jobs:
           channel: 'stable'
       - run: flutter clean
       - run: flutter pub get
+      - run: flutter pub run intl_utils:generate
       - run: flutter build ios --release --no-codesign
 
   build_apk:
