@@ -11,28 +11,30 @@ jobs:
     name: Build Flutter (iOS)
     runs-on: macOS-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      - run: flutter pub get
       - run: flutter clean
+      - run: flutter pub get
+      - run: flutter pub run intl_utils:generate
       - run: flutter build ios
 
   build_apk:
     name: Build Flutter (Android)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v2
+      - uses: actions/checkout@v1
       - uses: actions/setup-java@v1
         with:
           java-version: '12.x'
       - uses: subosito/flutter-action@v1
         with:
           channel: 'stable'
-      - run: flutter pub get
       - run: flutter clean
+      - run: flutter pub get
+      - run: flutter pub run intl_utils:generate
       - run: flutter build apk --release
