@@ -51,7 +51,7 @@ dependencies:
   get_it: ^7.7.0 # for dependency injection
   ## Handling Exceptions
   dartz: ^0.10.1 # for handling exceptions and returning either an exception
-  intl: ^0.18.1
+  intl: ^0.19.0
 dev_dependencies:
   flutter_test:
     sdk: flutter
