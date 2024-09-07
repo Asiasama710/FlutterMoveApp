@@ -11,29 +11,37 @@ jobs:
     name: Build Flutter (iOS)
     runs-on: macOS-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-java@v1
+      - name: Clone repository
+        uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v3
         with:
-          java-version: '12.x'
-      - uses: subosito/flutter-action@v1
+          distribution: 'temurin' # Use a specific JDK distribution
+          java-version: '11'
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          flutter-version: '3.22.3'
       - run: flutter clean
       - run: flutter pub get
       - run: flutter pub run intl_utils:generate
-      - run: flutter build ios
+      - run: flutter build ios --release --no-codesign --suppress-analytics
 
   build_apk:
     name: Build Flutter (Android)
     runs-on: ubuntu-latest
     steps:
-      - uses: actions/checkout@v1
-      - uses: actions/setup-java@v1
+      - name: Clone repository
+        uses: actions/checkout@v4
+      - name: Set up JDK
+        uses: actions/setup-java@v3
         with:
-          java-version: '12.x'
-      - uses: subosito/flutter-action@v1
+          distribution: 'temurin' # Use a specific JDK distribution
+          java-version: '11'
+      - name: Install Flutter
+        uses: subosito/flutter-action@v2
         with:
-          channel: 'stable'
+          flutter-version: '3.22.3'
       - run: flutter clean
       - run: flutter pub get
       - run: flutter pub run intl_utils:generate
