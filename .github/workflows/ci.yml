@@ -23,7 +23,6 @@ jobs:
       - run: flutter pub get
       - run: flutter pub run intl_utils:generate
       - run: flutter build ios --release --obfuscate --split-debug-info build/ios/outputs/symbols --no-codesign --suppress-analytics
-
   build_apk:
     name: Build Flutter (Android)
     runs-on: ubuntu-latest
@@ -34,7 +33,7 @@ jobs:
           java-version: '12.x'
       - uses: subosito/flutter-action@v1
         with:
-          channel: 'stable'
+          flutter-version: ' 3.22.3'
       - run: flutter clean
       - run: flutter pub get
       - run: flutter pub run intl_utils:generate
